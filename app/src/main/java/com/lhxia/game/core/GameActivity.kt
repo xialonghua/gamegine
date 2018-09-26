@@ -15,7 +15,7 @@ class GameActivity : AppCompatActivity() {
         setContentView(GameSurfaceView(Director().apply {
             stage = Stage().apply {
                 for (i in 0 .. 1000){
-                    spirits.add(SampleSpirit(this@GameActivity))
+                    spirits.add(SampleSpirit())
                 }
             }
         },this), ViewGroup.LayoutParams(-1, -1))

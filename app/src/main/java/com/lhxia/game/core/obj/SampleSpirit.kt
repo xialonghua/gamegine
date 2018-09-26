@@ -1,11 +1,8 @@
 package com.lhxia.game.core.obj
 
-import android.content.Context
 import android.graphics.*
-import android.graphics.drawable.BitmapDrawable
-import com.lhxia.app.R
 
-class SampleSpirit(var bitmap: Bitmap) : Spirit {
+class SampleSpirit() : Spirit {
 
     var startTime  = 0L
 
@@ -19,8 +16,8 @@ class SampleSpirit(var bitmap: Bitmap) : Spirit {
 
     override fun render(time: Long, canvas: Canvas) {
 
-        canvas.drawBitmap(bitmap, x.toFloat(), y.toFloat(), paint)
-//        canvas.drawCircle(x.toFloat(), y.toFloat(), 30f, paint)
+//        canvas.drawBitmap(bitmap, x.toFloat(), y.toFloat(), paint)
+        canvas.drawCircle(x.toFloat(), y.toFloat(), 30f, paint)
     }
 
     override fun update(time: Long) {
