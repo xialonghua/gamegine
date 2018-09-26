@@ -1,0 +1,9 @@
+package com.lhxia.network
+
+val SUCCESS = 200
+val SYSTEM_ERROR = 500
+val PARAM_ERROR = 501
+val NETWORK_ERROR = 502
+val ACCOUNT_NOT_FOUND = 1001
+val PASSWORD_ERROR = 1002
+val VERIFY_CODE_ERROR = 1003
