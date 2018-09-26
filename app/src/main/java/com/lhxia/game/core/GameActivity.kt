@@ -12,7 +12,7 @@ class GameActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(GameSurfaceView(Director().apply {
+        setContentView(GameSurfaceView(Director.director.apply {
             stage = Stage().apply {
                 for (i in 0 .. 1000){
                     spirits.add(SampleSpirit())

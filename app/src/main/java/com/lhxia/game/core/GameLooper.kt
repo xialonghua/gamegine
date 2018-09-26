@@ -3,6 +3,7 @@ package com.lhxia.game.core
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.PorterDuff
+import android.os.Build
 import com.lhxia.game.core.obj.Director
 import com.lhxia.game.core.obj.SampleSpirit
 import com.lhxia.game.core.obj.Spirit
@@ -30,7 +31,11 @@ class GameLooper(val surfaceView: GameSurfaceView, var director : Director) : Ru
         while (quite){
             time = System.currentTimeMillis()
             logic(time)
-            val canvas = surfaceView.holder.lockCanvas()
+            val canvas = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                surfaceView.holder.lockHardwareCanvas()
+            } else {
+                surfaceView.holder.lockCanvas()
+            }
             canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR)
             render(time, canvas)
 

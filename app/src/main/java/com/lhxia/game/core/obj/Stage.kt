@@ -2,7 +2,7 @@ package com.lhxia.game.core.obj
 
 import android.graphics.Canvas
 
-class Stage : Spirit {
+open class Stage : Spirit {
 
     val spirits : ArrayList<Spirit> = ArrayList()
 

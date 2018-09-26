@@ -4,6 +4,9 @@ import android.graphics.Canvas
 
 class Director : Spirit {
 
+    var screenWidth : Int = 0
+    var screenHeight : Int = 0
+
     var stage : Stage? = null
     var oldStage : Stage? = null
 
@@ -15,5 +18,9 @@ class Director : Spirit {
     override fun update(time: Long) {
         stage?.update(time)
         oldStage?.update(time)
+    }
+
+    companion object {
+        val director : Director = Director()
     }
 }
