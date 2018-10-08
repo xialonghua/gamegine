@@ -19,10 +19,16 @@ class StartStage : Stage() {
     var lastUpdateTime = 0L
     //请稍后后面的点点变化的时间
     var lastUpdateTime2 = 0L
+    //alpha闪烁次数
+    var flashTimes = 0
 
     override fun update(time: Long) {
         super.update(time)
-
+        if (flashTimes > 10){
+            //切换stage
+            Director.director.changeStage(GameStage())
+            return
+        }
         if (lastUpdateTime == 0L){
             lastUpdateTime = System.currentTimeMillis()
 
@@ -47,9 +53,11 @@ class StartStage : Stage() {
             if (alpha >= 1){
                 direction = -1
                 alpha = 1f
+                flashTimes++
             }else if (alpha <= 0.2){
                 alpha = 0.2f
                 direction = 1
+                flashTimes++
             }
         }
     }

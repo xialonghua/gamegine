@@ -31,11 +31,11 @@ class GameLooper(val surfaceView: GameSurfaceView, var director : Director) : Ru
         while (quite){
             time = System.currentTimeMillis()
             logic(time)
-            val canvas = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val canvas = (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 surfaceView.holder.lockHardwareCanvas()
             } else {
                 surfaceView.holder.lockCanvas()
-            }
+            }) ?: break
             canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR)
             render(time, canvas)
 

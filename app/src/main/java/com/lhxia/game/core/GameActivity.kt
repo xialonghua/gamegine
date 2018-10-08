@@ -13,11 +13,11 @@ class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(GameSurfaceView(Director.director.apply {
-            stage = Stage().apply {
+            changeStage(Stage().apply {
                 for (i in 0 .. 1000){
                     spirits.add(SampleSpirit())
                 }
-            }
+            })
         },this), ViewGroup.LayoutParams(-1, -1))
 
 

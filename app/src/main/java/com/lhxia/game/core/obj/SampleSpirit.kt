@@ -2,15 +2,15 @@ package com.lhxia.game.core.obj
 
 import android.graphics.*
 
-class SampleSpirit() : Spirit {
+class SampleSpirit() : Spirit() {
 
     var startTime  = 0L
 
     val initX = Math.random() * 1920
     val initY = Math.random() * 1080
 
-    var x : Int = initX.toInt()
-    var y : Int = initY.toInt()
+    override var x : Int = initX.toInt()
+    override var y : Int = initY.toInt()
 
     var direction = 1
 

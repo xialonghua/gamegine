@@ -2,9 +2,14 @@ package com.lhxia.game.core.obj
 
 import android.graphics.Canvas
 
-interface Spirit {
+abstract class Spirit {
 
-    fun render(time : Long, canvas : Canvas)
+    open var x = 0
+    open var y = 0
+    var width = 0
+    var height = 0
 
-    fun update(time : Long)
+    abstract fun render(time : Long, canvas : Canvas)
+
+    abstract fun update(time : Long)
 }
